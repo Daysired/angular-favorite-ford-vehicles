@@ -1,1 +1,15 @@
-<h2>{{vehicle}}</h2>
+<h2>{{vehicle.name | uppercase}} details</h2>
+<div><span>id: </span>{{vehicle.id}}</div>
+
+<div>
+  <label for="name">Vehicle Name: </label>
+  <input id="name" [(ngModel)]="vehicle.name" placeholder="name">
+</div>
+<div>
+  <label for="year">Vehicle Year: </label>
+  <input id="year" [(ngModel)]="vehicle.year" placeholder="year">
+</div>
+<div>
+  <label for="price">Vehicle Price: </label>
+  <input id="price" [(ngModel)]="vehicle.price" placeholder="price">
+</div>
