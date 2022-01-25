@@ -1,15 +1,28 @@
-<h2>{{vehicle.name | uppercase}} details</h2>
-<div><span>id: </span>{{vehicle.id}}</div>
+<h2>My Favorite Ford Vehicles</h2>
+<ul class="vehicles">
+  <li *ngFor="let vehicle of vehicles"
+      [class.selected]="vehicle === selectedVehicle"
+      (click)="onSelect(vehicle)">
+    <span class="badge">{{vehicle.id}}</span> {{vehicle.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedVehicle">
+
+<h2>{{selectedVehicle.name | uppercase}} Details</h2>
+<div><span>id: </span>{{selectedVehicle.id}}</div>
 
 <div>
-  <label for="name">Vehicle Name: </label>
-  <input id="name" [(ngModel)]="vehicle.name" placeholder="name">
+  <label for="vehicle-name">Vehicle Name: </label>
+  <input id="vehicle-name" [(ngModel)]="selectedVehicle.name" placeholder="name">
 </div>
 <div>
   <label for="year">Vehicle Year: </label>
-  <input id="year" [(ngModel)]="vehicle.year" placeholder="year">
+  <input id="year" [(ngModel)]="selectedVehicle.year" placeholder="year">
 </div>
 <div>
   <label for="price">Vehicle Price: </label>
-  <input id="price" [(ngModel)]="vehicle.price" placeholder="price">
+  <input id="price" [(ngModel)]="selectedVehicle.price" placeholder="price">
+</div>
+
 </div>
