@@ -1,1 +1,20 @@
-<p>vehicle-detail works!</p>
+<div *ngIf="vehicle">
+
+  <h2>{{vehicle.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{vehicle.id}}</div>
+
+  <div>
+    <label for="vehicle-name">Vehicle Name: </label>
+    <input id="vehicle-name" [(ngModel)]="vehicle.name" placeholder="name">
+  </div>
+  <div>
+    <label for="vehicle-year">Vehicle Year: </label>
+    <input id="vehicle-year" [(ngModel)]="vehicle.year" placeholder="year">
+  </div>
+  <div>
+    <label for="vehicle-price">Vehicle Price: </label>
+    <input id="vehicle-price" [(ngModel)]="vehicle.price" placeholder="price">
+  </div>
+
+</div>
+

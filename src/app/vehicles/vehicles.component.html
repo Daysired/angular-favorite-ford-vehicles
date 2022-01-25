@@ -7,22 +7,3 @@
   </li>
 </ul>
 
-<div *ngIf="selectedVehicle">
-
-<h2>{{selectedVehicle.name | uppercase}} Details</h2>
-<div><span>id: </span>{{selectedVehicle.id}}</div>
-
-<div>
-  <label for="vehicle-name">Vehicle Name: </label>
-  <input id="vehicle-name" [(ngModel)]="selectedVehicle.name" placeholder="name">
-</div>
-<div>
-  <label for="year">Vehicle Year: </label>
-  <input id="year" [(ngModel)]="selectedVehicle.year" placeholder="year">
-</div>
-<div>
-  <label for="price">Vehicle Price: </label>
-  <input id="price" [(ngModel)]="selectedVehicle.price" placeholder="price">
-</div>
-
-</div>
