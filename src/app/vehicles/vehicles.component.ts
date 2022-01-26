@@ -23,4 +23,18 @@ getVehicles(): void {
   .subscribe(vehicles => this.vehicles = vehicles);
 }
 
+add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.vehicleService.addVehicle({ name } as Vehicle)
+      .subscribe(vehicle => {
+        this.vehicles.push(vehicle);
+      });
+  }
+
+  delete(vehicle: Vehicle): void {
+    this.vehicles = this.vehicles.filter(v => v !== vehicle);
+    this.vehicleService.deleteVehicle(vehicle.id).subscribe();
+  }
+
 }

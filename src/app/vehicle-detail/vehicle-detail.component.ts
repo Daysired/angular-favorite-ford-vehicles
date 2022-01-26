@@ -11,6 +11,7 @@ import { VehicleService } from '../vehicle.service';
   styleUrls: ['./vehicle-detail.component.scss']
 })
 export class VehicleDetailComponent implements OnInit {
+
 vehicle: Vehicle | undefined;
 
   constructor(
@@ -24,7 +25,7 @@ vehicle: Vehicle | undefined;
   }
 
   getVehicle(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.vehicleService.getVehicle(id)
       .subscribe(vehicle => this.vehicle = vehicle);
   }
@@ -32,5 +33,12 @@ vehicle: Vehicle | undefined;
     goBack(): void {
       this.location.back();
     }
+
+     save(): void {
+        if (this.vehicle) {
+          this.vehicleService.updateVehicle(this.vehicle)
+            .subscribe(() => this.goBack());
+        }
+     }
 
 }
