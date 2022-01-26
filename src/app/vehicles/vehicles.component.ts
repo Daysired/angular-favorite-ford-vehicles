@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Vehicle } from '../vehicle';
-import { VEHICLES } from '../mock-vehicles';
 import { VehicleService } from '../vehicle.service';
+import { MessageService } from '../message.service';
+
 
 @Component({
   selector: 'app-vehicles',
@@ -14,7 +16,7 @@ selectedVehicle?: Vehicle;
 
 vehicles: Vehicle[] = [];
 
-  constructor(private vehicleService: VehicleService) { }
+  constructor(private vehicleService: VehicleService, private messageService: MessageService) { }
 
   ngOnInit(): void {
   this.getVehicles();
@@ -23,6 +25,7 @@ vehicles: Vehicle[] = [];
 
   onSelect(vehicle: Vehicle): void {
   this.selectedVehicle = vehicle;
+    this.messageService.add(`VehiclesComponent: Selected vehicle id=${vehicle.id}`);
   }
 
 getVehicles(): void {
