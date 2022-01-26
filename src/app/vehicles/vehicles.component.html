@@ -1,10 +1,10 @@
 <h2>My Favorite Ford Vehicles</h2>
 <ul class="vehicles">
-  <li *ngFor="let vehicle of vehicles"
-      [class.selected]="vehicle === selectedVehicle"
-      (click)="onSelect(vehicle)">
+  <li *ngFor="let vehicle of vehicles">
+    <a routerLink="/detail/{{vehicle.id}}">
     <span class="badge">{{vehicle.id}}</span> {{vehicle.name}}
+    </a>
   </li>
 </ul>
 
-<app-vehicle-detail [vehicle]="selectedVehicle"></app-vehicle-detail>
+

@@ -1,6 +1,7 @@
 <h2>Top Vehicles</h2>
 <div class="vehicles-menu">
-  <a *ngFor="let vehicle of vehicles">
+  <a *ngFor="let vehicle of vehicles"
+  routerLink="/detail/{{vehicle.id}}">
     {{vehicle.name}}
   </a>
 </div>
