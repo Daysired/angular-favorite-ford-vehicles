@@ -1,5 +1,9 @@
+h2 {
+margin-top:4em;
+}
+
 label {
-  color: #435960;
+  color: black;
   font-weight: bold;
 }
 input {
@@ -8,13 +12,14 @@ input {
 }
 button {
   margin-top: 20px;
-  background-color: #eee;
+  background-color:#002F6C;
   padding: 1rem;
   border-radius: 4px;
   font-size: 1rem;
+  color:white;
 }
 button:hover {
-  background-color: #cfd8dc;
+  background-color: black;
 }
 button:disabled {
   background-color: #eee;

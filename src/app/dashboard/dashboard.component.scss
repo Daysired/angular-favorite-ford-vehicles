@@ -1,11 +1,16 @@
 h2 {
   text-align: center;
+  margin-top: 10%;
+  font-size: 30px;
+  margin-bottom:2rem;
 }
+
 
 .heroes-menu {
   padding: 0;
   margin: auto;
   max-width: 1000px;
+  margin-left:35px;
 
   /* flexbox */
   display: flex;
@@ -17,9 +22,9 @@ h2 {
 }
 
 a {
-  background-color: #3f525c;
+  background-color: #002F6C;
   border-radius: 2px;
-  padding: 1rem;
+  padding: 2.5rem;
   font-size: 1.2rem;
   text-decoration: none;
   display: inline-block;
