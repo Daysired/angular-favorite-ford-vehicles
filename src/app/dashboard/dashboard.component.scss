@@ -6,11 +6,10 @@ h2 {
 }
 
 
-.heroes-menu {
+.vehicles-menu {
   padding: 0;
   margin: auto;
   max-width: 1000px;
-  margin-left:35px;
 
   /* flexbox */
   display: flex;
@@ -34,6 +33,7 @@ a {
   min-width: 70px;
   margin: .5rem auto;
   box-sizing: border-box;
+  box-shadow: 0 5px 6px 0 rgba(0,0,0,.2);
 
   /* flexbox */
   order: 0;
@@ -46,6 +46,7 @@ a {
     width: 18%;
     box-sizing: content-box;
   }
+
 }
 
 a:hover {

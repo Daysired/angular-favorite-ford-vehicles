@@ -6,8 +6,8 @@ label {
 }
 
 .search-div {
-margin-left: .5rem;
-margin-top: 5rem;
+ margin: auto;
+ max-width: 1000px;
 }
 
 input {
@@ -16,6 +16,7 @@ input {
 //   max-width: 600px;
   box-sizing: border-box;
   display: block;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.2);
 }
 
 input:focus {
