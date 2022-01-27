@@ -1,9 +1,14 @@
-h2 {
+.add-vehicles {
 margin-top:5rem;
+margin-bottom:2rem;
+}
+
+.favorite-vehicles {
+margin-top:3rem;
 }
 
 .vehicles {
-  margin: 0 0 2em 0;
+  margin: 3em 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 15em;
@@ -12,6 +17,7 @@ margin-top:5rem;
 input {
   display: block;
   width: 100%;
+  max-width:600px;
   padding: .5rem;
   margin: 1rem 0;
   box-sizing: border-box;

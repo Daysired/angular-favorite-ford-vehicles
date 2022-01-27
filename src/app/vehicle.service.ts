@@ -52,6 +52,20 @@ export class VehicleService {
      );
    }
 
+    /* GET vehicles whose name contains search term */
+     searchVehicles(term: string): Observable<Vehicle[]> {
+       if (!term.trim()) {
+         // if not search term, return empty hero array.
+         return of([]);
+       }
+       return this.http.get<Vehicle[]>(`${this.vehiclesUrl}/?name=${term}`).pipe(
+         tap(x => x.length ?
+            this.log(`found vehicles matching "${term}"`) :
+            this.log(`no vehicles matching "${term}"`)),
+         catchError(this.handleError<Vehicle[]>('searchVehicles', []))
+       );
+     }
+
    /** POST: add a new vehicle to the server */
      addVehicle(vehicle: Vehicle): Observable<Vehicle> {
        return this.http.post<Vehicle>(this.vehiclesUrl, vehicle, this.httpOptions).pipe(
